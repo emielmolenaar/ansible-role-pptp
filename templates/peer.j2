@@ -1,0 +1,5 @@
+pty "pptp {{ item.gateway }} --nolaunchpppd"
+name {{ item.name }}
+password {{ item.password }}
+remotename PPTP
+require-mppe-128

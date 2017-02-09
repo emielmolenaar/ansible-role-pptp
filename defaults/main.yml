@@ -1,0 +1,10 @@
+---
+
+pptp_packages:
+  - pptp-linux
+
+pptp_peers_present: []
+# - { name: somepeer, gateway: 1.2.3.4, username: user, password: changeme }
+
+pptp_peers_absent: []
+# - somepeerthatshouldnotbehere

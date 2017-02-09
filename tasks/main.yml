@@ -1,0 +1,13 @@
+---
+
+ - name: Ensure PPTP client packages are installed
+   apt: name="{{ item }}" state=installed update_cache=yes cache_valid_time=86400
+   with_items: "{{ pptp_packages }}"
+
+ - name: Setup present peers
+   template: src=peer.j2 dest="/etc/ppp/peers/{{ item.name }}" owner=root group=root mode=0644 state=present
+   with_items: "{{ pptp_peers_present }}"
+
+ - name: Setup present peers
+   file: name="/etc/ppp/peers/{{ item }}" state=absent
+   with_items: "{{ pptp_peers_absent }}"
