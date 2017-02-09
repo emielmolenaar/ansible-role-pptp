@@ -5,7 +5,7 @@
    with_items: "{{ pptp_packages }}"
 
  - name: Setup present peers
-   template: src=peer.j2 dest="/etc/ppp/peers/{{ item.name }}" owner=root group=root mode=0644 state=present
+   template: src=peer.j2 dest="/etc/ppp/peers/{{ item.name }}" owner=root group=root mode=0644
    with_items: "{{ pptp_peers_present }}"
 
  - name: Setup present peers
