@@ -8,3 +8,5 @@ pptp_peers_present: []
 
 pptp_peers_absent: []
 # - somepeerthatshouldnotbehere
+
+pptp_autostart_present_peers: true

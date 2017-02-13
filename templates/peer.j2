@@ -1,5 +1,9 @@
 pty "pptp {{ item.gateway }} --nolaunchpppd"
+lock
+noauth
+nobsdcomp
+nodeflate
 name {{ item.name }}
-password {{ item.password }}
-remotename PPTP
+remotename {{ item.server }}
 require-mppe-128
+ipparam {{ item.name }}
