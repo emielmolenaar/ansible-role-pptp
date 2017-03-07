@@ -1,4 +1,4 @@
-pty "pptp {{ item.gateway }} --nolaunchpppd"
+pty "pptp {{ item.gateway }} --nolaunchpppd --loglevel 0"
 lock
 noauth
 nobsdcomp
