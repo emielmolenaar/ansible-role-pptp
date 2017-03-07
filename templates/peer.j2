@@ -5,5 +5,7 @@ nobsdcomp
 nodeflate
 name {{ item.name }}
 remotename {{ item.server }}
+{% if item.encryption %}
 require-mppe-128
+{% endif %}
 ipparam {{ item.name }}
