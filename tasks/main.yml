@@ -19,8 +19,11 @@
  - name: Setup /etc/ppp/chap-secrets
    template: src=chap-secrets.j2 dest=/etc/ppp/chap-secrets owner=root group=root mode=0600
 
- - name: Setup routes on tunnel up
-   template: src=01-pptp-routes-up.j2 dest=/etc/ppp/ip-up.d/01-pptp-routes-up owner=root group=root mode=0751
+ - name: Put ip-up script in place
+   template: src=01-pptp-up.j2 dest=/etc/ppp/ip-up.d/01-pptp-up owner=root group=root mode=0751
+
+ - name: Put ip-down script in place
+   template: src=01-pptp-down.j2 dest=/etc/ppp/ip-down.d/01-pptp-down owner=root group=root mode=0751
 
  - name: Start tunnels if configured
    shell: "/usr/bin/pon {{ item.name }}"

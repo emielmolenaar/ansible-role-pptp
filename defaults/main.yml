@@ -10,3 +10,5 @@ pptp_peers_absent: []
 # - somepeerthatshouldnotbehere
 
 pptp_autostart_present_peers: true
+pptp_ip_up_script:
+pptp_ip_down_script:
